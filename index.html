@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clicky Key Minimal Typewriter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <!-- START MENU -->
+    <section id="start-menu" class="card menu-card">
+      <h1>Clicky Key</h1>
+      <p class="lead">Choose your difficulty and start typing!</p>
+      
+      <div class="menu-buttons">
+        <button id="easy-btn" class="btn btn-large btn-easy">
+          <span class="btn-title">Easy</span>
+          <span class="btn-desc">Common words, best for beginners</span>
+        </button>
+        <button id="hard-btn" class="btn btn-large btn-hard">
+          <span class="btn-title">Hard</span>
+          <span class="btn-desc">Complex words, challenge yourself</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game-container" class="card hidden">
+      <div class="game-header">
+        <h1 id="title">Clicky Key</h1>
+        <button id="home-btn" class="btn btn-home">Home</button>
+      </div>
+      <p class="lead">Type the words as fast and accurately as possible. Timer starts on first keystroke.</p>
+      
+      <div class="input-row">
+        <input id="input" type="text" placeholder="Start typing..." autocomplete="off" spellcheck="false">
+        <button id="restart" class="btn">Restart</button>
+      </div>
+
+      <div class="words" id="words" aria-live="polite"></div>
+
+      <div class="stats">
+        <div class="stat">Time: <strong id="time">60</strong>s</div>
+        <div class="stat">WPM: <strong id="wpm">0</strong></div>
+        <div class="stat">Correct: <strong id="correct">0</strong></div>
+        <div class="stat">Wrong: <strong id="wrong">0</strong></div>
+        <div class="stat">Accuracy: <strong id="acc">100%</strong></div>
+      </div>
+
+      <div class="settings">
+        <label for="duration">Duration:</label>
+        <div class="custom-dropdown" id="customDropdown">
+          <div class="dropdown-selected">60s</div>
+          <div class="dropdown-options">
+            <div class="dropdown-option" data-value="60">60s</div>
+            <div class="dropdown-option" data-value="90">90s</div>
+            <div class="dropdown-option" data-value="120">120s</div>
+          </div>
+        </div>
+      </div>
+
+            <div id="summary-card" class="summary-card hidden">
+        <h2>Session Summary</h2>
+        <div class="summary-content">
+          <div>Time: <span id="sum-time"></span>s</div>
+          <div>WPM: <span id="sum-wpm"></span></div>
+          <div>Correct: <span id="sum-correct"></span></div>
+          <div>Wrong: <span id="sum-wrong"></span></div>
+          <div>Accuracy: <span id="sum-acc"></span></div>
+        </div>
+        <h3>Wrong Words</h3>
+        <div id="wrong-words-list" class="wrong-words-list"></div>
+        <button id="close-summary" class="btn">Close</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js" defer></script>
+  <script src="admin.js" defer></script>
+</body>
+</html>
